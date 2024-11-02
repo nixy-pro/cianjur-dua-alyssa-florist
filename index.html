@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alyssa Florist, toko bunga terbaik di Cianjur, menyediakan beragam bunga segar dan rangkaian indah untuk semua acara. Dapatkan pelayanan cepat dan produk berkualitas tinggi untuk pernikahan, ulang tahun, dan lebih banyak lagi!">
+    <meta name="keywords" content="Toko Bunga, Cianjur, Alyssa Florist, Bunga Segar, Buket Bunga, Karangan Bunga, Rangkaian Bunga, Pengiriman Bunga, Bunga Pernikahan, Bunga Ulang Tahun, Florist Terbaik Cianjur, Cianjur Dua">
+    <link rel="icon" href="https://www.alyssaflorist.com/icon.png" type="image/png">
+    <title>Toko Bunga Cianjur - Alyssa Florist</title>
+    <style>
+        /* Reset dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #fff; /* Warna latar belakang */
+            position: relative;
+            overflow: auto; /* Memungkinkan scroll */
+        }
+
+        /* Latar belakang bunga melayang */
+        .flower-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Menyembunyikan elemen yang keluar dari batas */
+            z-index: -1; /* Mengirimkan ke belakang */
+        }
+
+        .flower {
+            position: absolute;
+            background-image: url('https://www.alyssaflorist.com/icon.png'); /* Gambar bunga kecil */
+            background-size: contain;
+            width: 50px; /* Ukuran bunga */
+            height: 50px; /* Ukuran bunga */
+            animation: float 6s ease-in-out infinite; /* Animasi melayang */
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px); /* Gerakan naik */
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Menghasilkan bunga di posisi acak */
+        .flower:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+        .flower:nth-child(2) { left: 20%; top: 40%; animation-delay: 1s; }
+        .flower:nth-child(3) { left: 30%; top: 10%; animation-delay: 2s; }
+        .flower:nth-child(4) { left: 40%; top: 30%; animation-delay: 3s; }
+        .flower:nth-child(5) { left: 50%; top: 25%; animation-delay: 4s; }
+        .flower:nth-child(6) { left: 70%; top: 15%; animation-delay: 5s; }
+        .flower:nth-child(7) { left: 80%; top: 50%; animation-delay: 1.5s; }
+        .flower:nth-child(8) { left: 90%; top: 35%; animation-delay: 2.5s; }
+
+        /* Judul */
+        .title {
+            font-size: 2rem; /* Ukuran judul lebih kecil */
+            color: red; /* Warna merah */
+            text-align: center;
+            margin-top: 20px; /* Memberikan jarak dari atas */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Menambahkan bayangan pada teks */
+            /* Animasi dihapus agar judul tetap diam */
+        }
+
+        /* Gambar Bunga */
+        .image-container {
+            max-width: 300px;
+            width: 100%;
+            margin: 20px 0; /* Memberikan jarak vertikal */
+        }
+
+        .flower-image {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Bayangan pada gambar */
+        }
+
+        /* Tombol CTA */
+        .cta-button {
+            background-color: #ff9800; /* Warna tombol oranye yang cerah */
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+            text-decoration: none;
+            margin-bottom: 20px; /* Memberikan jarak dari bawah */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Bayangan pada tombol */
+        }
+
+        .cta-button:hover {
+            background-color: #fb8c00; /* Warna saat hover yang lebih gelap */
+            transform: translateY(-3px); /* Efek mengangkat tombol saat hover */
+        }
+
+        .cta-button:active {
+            transform: translateY(0); /* Mengembalikan posisi saat diklik */
+        }
+
+        /* Responsif */
+        @media (min-width: 768px) {
+            .title {
+                font-size: 2.5rem; /* Ukuran judul lebih besar di layar lebih lebar */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flower-background">
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+    </div>
+
+    <h1 class="title">Toko Bunga Cianjur</h1>
+
+    <div class="image-container">
+        <img src="https://cianjurdua.alyssaflorist.com/1.jpg" alt="Alyssa Florist" class="flower-image">
+    </div>
+
+    <a href="https://www.alyssaflorist.com" class="cta-button">Kunjungi Toko</a>
+
+    <script>
+        // Animasi tombol saat diklik
+        document.querySelector('.cta-button').addEventListener('click', function() {
+            this.classList.add('clicked');
+            setTimeout(() => this.classList.remove('clicked'), 300);
+        });
+    </script>
+
+</body>
+</html>
